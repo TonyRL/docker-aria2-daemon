@@ -1,4 +1,4 @@
-FROM lsiobase/nginx:3.11
+FROM lsiobase/alpine:3.11
 
 MAINTAINER tonyrl
 
