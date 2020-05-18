@@ -5,7 +5,7 @@ mkdir -p /conf
 mkdir -p /download
 
 cp -n /app/start.sh /config/start.sh
-cp -n /app/aria2.conf /config/aria2.conf
+cp -n /app/aria2.conf /conf/aria2.conf
 cp -n /app/aria2_ext.conf /conf/aria2_ext.conf
 cp -n /app/on-bt-download-complete.sh /conf/on-bt-download-complete.sh
 cp -n /app/on-download-complete.sh /conf/on-download-complete.sh
