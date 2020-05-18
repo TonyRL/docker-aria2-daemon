@@ -4,19 +4,19 @@ mkdir -p /config
 mkdir -p /conf
 mkdir -p /download
 
-dockerize -template /app/start.sh:/config/start.sh
-dockerize -template /app/aria2.conf:/config/aria2.conf
-dockerize -no-overwrite -template /app/aria2_ext.conf:/conf/aria2_ext.conf
-dockerize -no-overwrite -template /app/on-bt-download-complete.sh:/conf/on-bt-download-complete.sh
-dockerize -no-overwrite -template /app/on-download-complete.sh:/conf/on-download-complete.sh
-dockerize -no-overwrite -template /app/on-download-error.sh:/conf/on-download-error.sh
-dockerize -no-overwrite -template /app/on-download-pause.sh:/conf/on-download-pause.sh
-dockerize -no-overwrite -template /app/on-download-start.sh:/conf/on-download-start.sh
-dockerize -no-overwrite -template /app/on-download-stop.sh:/conf/on-download-stop.sh
+cp -n /app/start.sh /config/start.sh
+cp -n /app/aria2.conf /config/aria2.conf
+cp -n /app/aria2_ext.conf /conf/aria2_ext.conf
+cp -n /app/on-bt-download-complete.sh /conf/on-bt-download-complete.sh
+cp -n /app/on-download-complete.sh /conf/on-download-complete.sh
+cp -n /app/on-download-error.sh /conf/on-download-error.sh
+cp -n /app/on-download-pause.sh /conf/on-download-pause.sh
+cp -n /app/on-download-start.sh /conf/on-download-start.sh
+cp -n /app/on-download-stop.sh /conf/on-download-stop.sh
 
-dockerize -template /app/aria2rpc.ruby:/config/aria2rpc.ruby
-dockerize -template /app/rss_download.sh:/config/rss_download.sh
-dockerize -no-overwrite -template /app/rss_feeds.txt:/conf/rss_feeds.txt
+cp -n /app/aria2rpc.ruby /config/aria2rpc.ruby
+cp -n /app/rss_download.sh /config/rss_download.sh
+cp -n /app/rss_feeds.txt /conf/rss_feeds.txt
 
 cat /conf/aria2_ext.conf >> /config/aria2.conf
 
@@ -36,9 +36,9 @@ chmod +x /config/aria2rpc.ruby
 chmod +x /config/rss_download.sh
 chmod +x /config/rss_download_wget.sh
 
-chown -R app:users /download
-chown -R app:users /config
-chown -R app:users /conf
+chown -R abc:abc /download
+chown -R abc:abc /config
+chown -R abc:abc /conf
 
 #cat /config/aria2.conf
 
