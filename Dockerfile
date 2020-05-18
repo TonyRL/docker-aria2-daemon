@@ -1,18 +1,17 @@
-FROM fanningert/baseimage-alpine
+FROM lsiobase/nginx:3.11
 
-MAINTAINER fanningert <thomas@fanninger.at>
+MAINTAINER tonyrl
 
-RUN apk update && \
-	apk add --no-cache --update bash && \
-	apk add --no-cache --update aria2
-
-RUN apk --update add \
-  ca-certificates \
-  ruby \
-  ruby-bundler \
-  ruby-xmlrpc \
-  ruby-dev && \
-  rm -fr /usr/share/ri
+RUN \
+ apk add --no-cache --upgrade \
+ 		aria2 \
+		bash \
+		ca-certificates \
+		ruby \
+		ruby-bundler \
+		ruby-xmlrpc \
+		ruby-dev && \
+ rm -fr /usr/share/ri
 
 ADD root/ /
 
